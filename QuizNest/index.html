@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNest | Online Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>QuizNest</h1>
+        <p>Test your knowledge, one question at a time.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome-card" id="homePage">
+            <h2>Welcome to QuizNest!</h2>
+            <p>Challenge yourself with an interactive quiz.</p>
+
+            <button id="startQuizBtn">Start Quiz</button>
+            <button id="adminBtn" class="secondary-btn">
+                Admin Panel
+            </button>
+        </section>
+
+        <section class="quiz-card hidden" id="quizPage">
+            <div class="quiz-info">
+                <span id="questionNumber">Question 1</span>
+                <span id="scoreDisplay">Score: 0</span>
+            </div>
+
+            <h2 id="questionText">Your question will appear here.</h2>
+
+            <div id="optionsContainer"></div>
+
+            <button id="nextBtn" disabled>Next Question</button>
+        </section>
+
+        <section class="result-card hidden" id="resultPage">
+           <h2>Quiz Completed!</h2>
+           <p id="finalScore"></p>
+           <button id="restartBtn">Play Again</button>
+           <button id="homeBtn" class="secondary-btn">Home</button>
+        </section>
+
+        <section class="admin-card hidden" id="adminPage">
+            <h2>Admin Panel</h2>
+            <p>Manage your quiz questions.</p>
+
+            <button id="backHomeBtn" class="secondary-btn">
+                Back to Home
+            </button>
+
+            <div class="admin-form">
+                <h3 id="formTitle">Add a New Question</h3>
+
+                <form id="questionForm">
+                    <label for="questionInput">Question</label>
+                    <textarea id="questionInput" required></textarea>
+
+                    <label for="optionA">Option A</label>
+                    <input type="text" id="optionA" required>
+
+                    <label for="optionB">Option B</label>
+                    <input type="text" id="optionB" required>
+
+                    <label for="optionC">Option C</label>
+                    <input type="text" id="optionC" required>
+
+                    <label for="optionD">Option D</label>
+                    <input type="text" id="optionD" required>
+
+                    <label for="correctAnswer">Correct Answer</label>
+                    <select id="correctAnswer" required>
+                        <option value="0">Option A</option>
+                        <option value="1">Option B</option>
+                        <option value="2">Option C</option>
+                        <option value="3">Option D</option>
+                    </select>
+
+                    <button type="submit" id="saveQuestionBtn">
+                        Add Question
+                    </button>
+
+                    <button type="button" id="cancelEditBtn" class="secondary-btn hidden">
+                        Cancel Edit
+                    </button>
+                </form>
+            </div>
+
+            <div class="question-list">
+                <h3>Manage Questions</h3>
+                <div id="adminQuestionList"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>QuizNest | Online Quiz Application</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
